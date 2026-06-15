@@ -60,3 +60,46 @@ print("Odczytane dane:", dane)
 fh = open("test.txt", "w")
 fh.write("Zapisane\n")
 fh.close()
+
+# domknięcie
+# funkcja wewnętrzna pamięta wartośc przekazene w funkcji zewnętrznej
+def obsluga_zamowienia(numer_zamowienia):
+    status = "nowe"
+
+    def zmien_status(nowy_status):
+        nonlocal status # by działło domknięcie
+
+        poprzedni_status = status
+        status = nowy_status
+
+        print(f"""
+Zamówienie {numer_zamowienia}:
+{poprzedni_status} -> {status}
+""")
+
+    return zmien_status
+
+zamowienie_1001 = obsluga_zamowienia(1001)
+
+zamowienie_1001("opłacone")
+zamowienie_1001("spakowane")
+zamowienie_1001("wysłane")
+zamowienie_1001("dostarczone")
+#
+# Zamówienie 1001:
+# nowe -> opłacone
+#
+#
+# Zamówienie 1001:
+# opłacone -> spakowane
+#
+#
+# Zamówienie 1001:
+# spakowane -> wysłane
+#
+#
+# Zamówienie 1001:
+# wysłane -> dostarczone
+#
+
+
