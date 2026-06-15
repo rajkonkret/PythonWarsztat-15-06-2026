@@ -299,7 +299,7 @@ lista = [1, 2, 3, 4, 4, 7, 7, 6, 5, 1, 2, 3]
 
 print(dict.fromkeys(lista))
 # {1: None, 2: None, 3: None, 4: None, 7: None, 6: None, 5: None}
-print(list(dict.fromkeys(lista))) # [1, 2, 3, 4, 7, 6, 5] nie zmienia kolejnosci
+print(list(dict.fromkeys(lista)))  # [1, 2, 3, 4, 7, 6, 5] nie zmienia kolejnosci
 
 # pętla - while - sterowana warunkiem
 
@@ -308,9 +308,9 @@ while True:
     print("Dane")
     licznik += 1
     if licznik > 10:
-        break # przerywa pętlę
+        break  # przerywa pętlę
 
-print(50 * "-") # --------------------------------------------------
+print(50 * "-")  # --------------------------------------------------
 licznik = 0
 while licznik < 10:
     licznik += 1
@@ -337,9 +337,9 @@ prompt = "Wybierz swoją przekąskę"
 
 # walrus operator, operator morsa
 # :=
-
-while (choice := input(prompt)) not in przekaski:
-    print("Nie ma")
+#
+# while (choice := input(prompt)) not in przekaski:
+#     print("Nie ma")
 # Wybierz swoją przekąskęzupa
 # Nie ma
 # Wybierz swoją przekąskęfrytki
@@ -348,3 +348,14 @@ while (choice := input(prompt)) not in przekaski:
 # obliczyc długossc
 # w zaleznosci od długosci wypisac tekst, wypisac ile wybosi ta długosc
 # uzyc walrus operatora
+
+wyraz = input("Wpisz wyraz: ")
+
+if (n := len(wyraz)) < 5:
+    print(f"Wyraz jest krótki. Ma długość {n} znaków.")
+elif n <= 8:
+    print(f"Wyraz ma średnią długosc. Ma długość {n} znaków.")
+else:
+    print(f"Wyraz jest długi. Ma długość {n} znaków.")
+# Wpisz wyraz: Radek
+# Wyraz ma średnią długosc. Ma długość 5 znaków.
