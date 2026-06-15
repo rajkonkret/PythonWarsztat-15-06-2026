@@ -69,3 +69,19 @@ print(0.1 + 0.2)  # 0.30000000000000004
 #  For example, in a floating-point arithmetic with five base-ten digits,
 #  the sum 12.345 + 1.0001 = 13.3451 might be rounded to 13.345.
 # decimla() - pozwal ominąc problem błedu zaoktrąglenia
+
+# boolean
+# typ logiczny
+# True, False
+# 1, 0
+
+print(bool(100))  # True
+print(bool("radek"))  # True
+
+print(bool(""))  # False
+print(bool(0))  # False
+
+print(bool("0"))
+
+# rzutowanie
+print(int("0"))  # 0
