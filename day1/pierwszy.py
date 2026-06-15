@@ -184,3 +184,13 @@ print("index:", index, "wartość:", wartosc, sep="----")  # index:----114----wa
 # dedykowany do logów
 print("a: %i b: %s" % (index, wartosc))  # a: 114 b: Michał
 # print("a: %i b: %s" % ("index", wartosc)) # TypeError: %i format: a real number is required, not str
+
+nowe_imie = imiona  # kopia referencji
+print(imiona)  # ['Jan', 'Piotr', 'Anna', 'Michał']
+print(nowe_imie)  # ['Jan', 'Piotr', 'Anna', 'Michał']
+
+print(id(imiona))  # 2101156433856
+print(id(nowe_imie))  # 2101156433856
+
+nowa_lista = imiona.copy()
+print(id(nowa_lista))  # 2101158276480
