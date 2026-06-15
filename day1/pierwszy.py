@@ -253,4 +253,47 @@ print(pusty_zbior)  # set()
 
 lista = [1, 2, 3, 4, 4, 7, 7, 6, 5, 1, 2, 3]
 zbior = set(lista)
-print(zbior) # {1, 2, 3, 4, 5, 6, 7} bez zachowannia kolejności
+print(zbior)  # {1, 2, 3, 4, 5, 6, 7} bez zachowannia kolejności
+
+# słownik - para klucz:wartosc
+# {"name" : "John", 'age':30, "car: None}
+# odpowiednik jsona
+# {"name":"John", "age":30, "car":null}
+
+pusty_slownik = {}  # {1, 2, 3, 4, 5, 6, 7}
+print(type(pusty_slownik))  # <class 'dict'>
+
+pusty_slownik = dict()
+print(type(pusty_slownik))
+print(pusty_slownik)  # {}
+
+osoba = {
+    "id": 89,
+    'imie': "Tadeusz",
+    "rok": 1976,
+    "miasto": "Łódź"
+}
+
+print(osoba)  # {'id': 89, 'imie': 'Tadeusz', 'rok': 1976, 'miasto': 'Łódź'}
+print(type(osoba))  # <class 'dict'>
+
+print(osoba['miasto'])  # Łódź
+# print(osoba['Miasto'])  # KeyError: 'Miasto'
+
+print(osoba.get('miasto'))  # Łódź
+print(osoba.get('Miasto'))  # None
+print(osoba.get("Miasto", "default"))  # default
+
+osoba['imie'] = "Radek"
+print(osoba)  # {'id': 89, 'imie': 'Radek', 'rok': 1976, 'miasto': 'Łódź'}
+
+print(osoba.keys())
+print(osoba.values())
+print(osoba.items())
+
+# dict_keys(['id', 'imie', 'rok', 'miasto'])
+# dict_values([89, 'Radek', 1976, 'Łódź'])
+# dict_items([('id', 89), ('imie', 'Radek'), ('rok', 1976), ('miasto', 'Łódź')])
+
+lista = [1, 2, 3, 4, 4, 7, 7, 6, 5, 1, 2, 3]
+
