@@ -85,3 +85,55 @@ print(bool("0"))
 
 # rzutowanie
 print(int("0"))  # 0
+
+# kolekcje
+# przechowuje dowolną ilośc danych i dowolny typ na raz
+
+# lista - zachowuje kolejność przy dodwaniu elementów, mutowalna
+imiona = ["Jan", "Piotr", "Anna", "Nadia", "Michał"]
+print(imiona)  # ['Jan', 'Piotr', 'Anna', 'Nadia', 'Michał']
+print(type(imiona))  # <class 'list'>
+
+# ['Jan', 'Piotr', 'Anna', 'Nadia', 'Michał']
+#    0       1        2        3        4
+#    -5      -4       -3       -2       -1
+print(imiona[1])  # Piotr
+print(imiona[-1])  # Michał
+print(imiona[len(imiona) - 1])  # Michał
+print(imiona[-1])  # Michał ostatni element
+
+print(imiona[-2])
+
+# sliceowanie - fragment listy
+print(imiona[2:4])  # ['Anna', 'Nadia']
+print(imiona[1:])  # ['Piotr', 'Anna', 'Nadia', 'Michał']
+
+print(imiona[2:7])  # ['Anna', 'Nadia', 'Michał']
+print(imiona[10:34])  # []
+
+print(imiona[-2:0])  # [] [3:0]
+print(imiona[0:-2])  # [0:3] # ['Jan', 'Piotr', 'Anna']
+
+imiona_p = imiona[::2]  # [start:stop:krok]
+print(imiona_p)  # ['Jan', 'Anna', 'Michał']
+
+lista_p = list()
+lista_p2 = []
+print(lista_p)  # []
+print(lista_p2)  # []
+
+lista_p.append("Karol")
+lista_p.append("Radek")
+lista_p.append("Tomek")
+lista_p.append("Anna")
+print(lista_p)  # ['Karol', 'Radek', 'Tomek', 'Anna']
+
+lista_p.insert(1, "Jan")  # na wskazanym indeksie
+print(lista_p)  # ['Karol', 'Jan', 'Radek', 'Tomek', 'Anna']
+
+lista_p.append("Jan")
+print(lista_p)  # ['Karol', 'Jan', 'Radek', 'Tomek', 'Anna', 'Jan']
+
+lista_p.remove("Jan")  # usunie pierwszy napotkany
+print(lista_p)
+# ['Karol', 'Radek', 'Tomek', 'Anna', 'Jan']
