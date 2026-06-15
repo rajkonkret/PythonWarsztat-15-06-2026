@@ -359,3 +359,35 @@ else:
     print(f"Wyraz jest długi. Ma długość {n} znaków.")
 # Wpisz wyraz: Radek
 # Wyraz ma średnią długosc. Ma długość 5 znaków.
+
+print(chr(223))  # ß - sharfes s
+print("\u1E9E")  # ẞ jako unicode
+name1 = "GROSS"
+name2 = "groß"
+
+print(name1.lower() == name2.lower())  # False
+
+"""Return a version of the string suitable for caseless comparisons."""
+print(name1.casefold() == name2.casefold())  # True
+
+# od 3.10
+# match case
+
+# dane = [1,2,3]
+# gdy dane przyjda jako lista, chcemy wyppisac a,b,c
+
+# isintance
+dane = [1, 2, 3]
+dane = {'nazwa': "Radek", "wiek": 56}
+dane = "Radek"
+match dane:
+    case [a, b, c]:
+        print(f"Lista z trzema elementami {a=}, {b=}, {c=}")
+    case {'nazwa': n, "wiek": w}:
+        print(f"Słownik reprezentujący osobę: {n}, wiek: {w}")
+    case _:
+        print("Błędne dane")
+# True
+# Lista z trzema elementami a=1, b=2, c=3
+# Słownik reprezentujący osobę: Radek, wiek: 56
+# Błędne dane
