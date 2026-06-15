@@ -194,3 +194,17 @@ print(id(nowe_imie))  # 2101156433856
 
 nowa_lista = imiona.copy()
 print(id(nowa_lista))  # 2101158276480
+
+imiona.clear()  # usunie elemnty z listy
+print(imiona)  # []
+print(nowe_imie)  # []
+
+nowe_imie.append("Radek")
+print(imiona)  # ['Radek']
+print(nowe_imie)  # ['Radek']
+
+pimie = imiona[:]
+qimie = list(imiona)
+print(id(pimie))  # 2103135052224
+print(id(qimie))  # 2103172283456
+print(id(imiona))  # 2103132868544
