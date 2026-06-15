@@ -231,3 +231,26 @@ print(miasto.count(("Łódź")))  # wystepuje 1 raz
 
 del miasto
 # print(miasto) # NameError: name 'miasto' is not defined
+
+# zbiór, set
+# nie zachowuje kolejnosci (brak indeksu)
+# nie ma duplikatów
+# hashowane
+
+drzewa = {'jodła', 'buk', "świerk", 'dąb', 'klon'}
+print(drzewa)  # {'dąb', 'buk', 'klon', 'świerk', 'jodła'}
+print(type(drzewa))  # <class 'set'>
+
+drzewa.add("osika")
+drzewa.add("osika")
+drzewa.add("osika")
+drzewa.add("osika")
+print(drzewa)  # {'buk', 'dąb', 'jodła', 'klon', 'świerk', 'osika'}
+
+# pusty zbior
+pusty_zbior = set()  # tylko i wyłacznie za pomocą set()
+print(pusty_zbior)  # set()
+
+lista = [1, 2, 3, 4, 4, 7, 7, 6, 5, 1, 2, 3]
+zbior = set(lista)
+print(zbior) # {1, 2, 3, 4, 5, 6, 7} bez zachowannia kolejności
