@@ -300,3 +300,51 @@ lista = [1, 2, 3, 4, 4, 7, 7, 6, 5, 1, 2, 3]
 print(dict.fromkeys(lista))
 # {1: None, 2: None, 3: None, 4: None, 7: None, 6: None, 5: None}
 print(list(dict.fromkeys(lista))) # [1, 2, 3, 4, 7, 6, 5] nie zmienia kolejnosci
+
+# pętla - while - sterowana warunkiem
+
+licznik = 0
+while True:
+    print("Dane")
+    licznik += 1
+    if licznik > 10:
+        break # przerywa pętlę
+
+print(50 * "-") # --------------------------------------------------
+licznik = 0
+while licznik < 10:
+    licznik += 1
+    print("Licznik dane 2")
+# Dane
+# --------------------------------------------------
+# Licznik dane 2
+
+przekaski = ['hotdog', 'pizza', 'hamburger', 'frytki']
+prompt = "Wybierz swoją przekąskę"
+
+# while True:
+#     choice = input(prompt.strip()) # strip() - usuniecie białych znaków
+#
+#     if choice in przekaski:
+#         break
+#     print('Nie ma')
+#
+# Wybierz swoją przekąskęzupa
+# Nie ma
+# Wybierz swoją przekąskękola
+# Nie ma
+# Wybierz swoją przekąskęfrytki
+
+# walrus operator, operator morsa
+# :=
+
+while (choice := input(prompt)) not in przekaski:
+    print("Nie ma")
+# Wybierz swoją przekąskęzupa
+# Nie ma
+# Wybierz swoją przekąskęfrytki
+
+# zmienna, wpisac wwyraz
+# obliczyc długossc
+# w zaleznosci od długosci wypisac tekst, wypisac ile wybosi ta długosc
+# uzyc walrus operatora
