@@ -137,3 +137,50 @@ print(lista_p)  # ['Karol', 'Jan', 'Radek', 'Tomek', 'Anna', 'Jan']
 lista_p.remove("Jan")  # usunie pierwszy napotkany
 print(lista_p)
 # ['Karol', 'Radek', 'Tomek', 'Anna', 'Jan']
+
+# garbage collector
+
+del imiona[3]
+print(imiona)
+
+del lista_p2  # usunięcie zmiennej
+# print(lista_p2) # NameError: name 'lista_p2' is not defined. Did you mean: 'lista_p'?
+
+# numerowanie kolekcji
+# enumerate()
+imen = enumerate(imiona, start=111)
+# for i in imen:
+#     print(i)
+# (114, 'Michał')
+# 114, 'Michal'
+# for i in imen:
+#     print(i[0], i[1])
+# 111 Jan
+# 112 Piotr
+# 113 Anna
+# 114 Michał
+
+a, b = (114, 'Michał')
+print(a, b)  # 114 Michał
+
+for index, wartosc in imen:
+    print(f"index -> {index}, wartosc -> {wartosc}")
+# index -> 111, wartosc -> Jan
+# index -> 112, wartosc -> Piotr
+# index -> 113, wartosc -> Anna
+# index -> 114, wartosc -> Michał
+
+print("index -> {}, wartosc -> {}".format(index, wartosc))  # index -> 114, wartosc -> Michał
+
+print("index:", index, "wartość:", wartosc)  # index: 114 wartość: Michał
+
+# sep
+# string inserted between values, default a space.
+# end
+# string appended after the last value, default a newline.
+print("index:", index, "wartość:", wartosc, sep="----")  # index:----114----wartość:----Michał
+
+# lazy
+# dedykowany do logów
+print("a: %i b: %s" % (index, wartosc))  # a: 114 b: Michał
+# print("a: %i b: %s" % ("index", wartosc)) # TypeError: %i format: a real number is required, not str
