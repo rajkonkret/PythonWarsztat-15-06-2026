@@ -297,3 +297,6 @@ print(osoba.items())
 
 lista = [1, 2, 3, 4, 4, 7, 7, 6, 5, 1, 2, 3]
 
+print(dict.fromkeys(lista))
+# {1: None, 2: None, 3: None, 4: None, 7: None, 6: None, 5: None}
+print(list(dict.fromkeys(lista))) # [1, 2, 3, 4, 7, 6, 5] nie zmienia kolejnosci
