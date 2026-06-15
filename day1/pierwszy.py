@@ -208,3 +208,26 @@ qimie = list(imiona)
 print(id(pimie))  # 2103135052224
 print(id(qimie))  # 2103172283456
 print(id(imiona))  # 2103132868544
+
+# krotka - tupla
+# kolekcja niemutowalna
+# tylko do odczytu
+# pozwala lepiej zarządzzać pamięcią
+# miasto = "Kraków", "Lublin", "Płock", "Łódź"
+miasto = ("Kraków", "Lublin", "Płock", "Łódź")
+print(miasto)
+print(type(miasto))
+# ('Kraków', 'Lublin', 'Płock', 'Łódź')
+# <class 'tuple'>
+
+krotka_jeden = ("radek",)  # pep8 tak zaleca
+print(type(krotka_jeden))
+print(krotka_jeden)  # ('radek',)
+
+print(miasto.index("Łódź"))  # index numer 3
+print(miasto.count(("Łódź")))  # wystepuje 1 raz
+
+# del miasto[0] # TypeError: 'tuple' object doesn't support item deletion
+
+del miasto
+# print(miasto) # NameError: name 'miasto' is not defined
