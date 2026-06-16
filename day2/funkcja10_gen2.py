@@ -112,3 +112,38 @@ for i, n in fibo_with_index(5):
 # Pozycja: 2, element: 1
 # Pozycja: 3, element: 2
 # Pozycja: 4, element: 3
+
+person = ['Radek', "Tomek", "Zenek", "Ania", "Kasia", "Piotr"]
+wiek = [34, 56, 57, 34, 45]
+
+# Radek lat 34
+for p, w in zip(person, wiek):
+    print(f"{p}, lat: {w}")
+# Radek, lat: 34
+# Tomek, lat: 56
+# Zenek, lat: 57
+# Ania, lat: 34
+# Kasia, lat: 45
+
+print(20 * "-")
+from itertools import zip_longest
+
+zipped = zip_longest(person, wiek, fillvalue="Brak danych")
+print(zipped)  # <itertools.zip_longest object at 0x000001A4F6F70E00>
+
+for imie, wiek in zipped:
+    print(f"{imie}, lat: {wiek}")
+# --------------------
+# <itertools.zip_longest object at 0x000001CED9E40E00>
+# Radek, lat: 34
+# Tomek, lat: 56
+# Zenek, lat: 57
+# Ania, lat: 34
+# Kasia, lat: 45
+# Piotr, lat: Brak danych
+
+print(20 * "-")
+for imie, wiek in zipped:
+    print(f"{imie}, lat: {wiek}")
+# --------------------
+# dane wyczerpane w poprzednim kroku
