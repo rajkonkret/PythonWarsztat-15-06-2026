@@ -106,4 +106,6 @@ dlugie_nazwy = list(
 print(dlugie_nazwy)  # ['Warszawa', 'Kraków', 'Katowice', 'Wrocław', 'Gdańsk']
 
 dlugie_nazwy = [miasto for miasto in miasta if len(miasto) >= 6]
-print(dlugie_nazwy)
+print(dlugie_nazwy) # ['Warszawa', 'Kraków', 'Katowice', 'Wrocław', 'Gdańsk']
+
+# wybrac ceny wikesze niz 100, obnizyc o 10 %
