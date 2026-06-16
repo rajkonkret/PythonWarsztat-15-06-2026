@@ -285,3 +285,16 @@ zamowienia = [
     {'id': 2, 'oplacone': True},
     {'id': 3, 'oplacone': False},
 ]
+
+wszystkie_oplacone = all(
+    zamowienie['oplacone']
+    for zamowienie in zamowienia
+)
+
+nieoplacone = any(
+    not zamowienie['oplacone']
+    for zamowienie in zamowienia
+)
+
+print(wszystkie_oplacone)  # False
+print(nieoplacone)  # True
