@@ -1,6 +1,8 @@
 # lambda - skrócony zapis funkcji
 # lambda zawsze zwraca wynik
 # funkcja anonimowa - nie ma nazwy, mozliwosc wykonania w miejscu deklaracji
+from functools import reduce
+
 
 def oblicz_rabat(cena, procent):
     return cena * procent / 100
@@ -225,3 +227,14 @@ print(r0)
 print(r1)
 # {'miasto': 'Kielce', 'ZIP': '00-000'}
 # {'miasto': 'Kielce', 'ZIP': '25-900'}
+
+# reduce()
+# reduce(lambda x, y: x+y, [1, 2, 3, 4, 5]) calculates ((((1+2)+3)+4)+5)
+# bierze kolejne elementy iłączy je w jeden wynik
+liczby = [1, 3, 4, 5]
+wynik = reduce(
+    lambda x, y: x * y,
+    liczby
+)
+
+print(wynik)  # 60
