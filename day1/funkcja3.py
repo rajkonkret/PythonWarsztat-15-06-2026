@@ -298,3 +298,39 @@ nieoplacone = any(
 
 print(wszystkie_oplacone)  # False
 print(nieoplacone)  # True
+
+# zasieg zmiennych w funkcjach
+
+podatek = 0.23
+
+
+def pokaz_podatek():
+    podatek = 0.08  # tylko lokalnie
+    print("podatek lokalny:", podatek)
+
+
+print("Podatek globalny:", podatek)
+pokaz_podatek()
+print("Podatek globalny:", podatek)
+
+liczba_zamowien = 0
+
+
+def zarejestruj_zamowinie():
+    global liczba_zamowien
+    liczba_zamowien += 1  # zmieniamy zmienna globalna
+    print("Liczba zamowien:", liczba_zamowien)
+
+
+zarejestruj_zamowinie()
+zarejestruj_zamowinie()
+
+
+# tworzenie funkcji
+
+def utworz_przelicznik(kurs):
+    return lambda kwota: round(kwota * kurs, 2)
+
+
+pln_na_eur = utworz_przelicznik(0.24)
+print(pln_na_eur(1000))  # 240.0
