@@ -57,7 +57,8 @@ def sum_nested(data):
     total = 0
 
     if isinstance(data, dict):
-        for key, value in data.items():
+        # for key, value in data.items():
+        for value in data.values():
             total += sum_nested(value)
     elif isinstance(data, list):
         for item in data:
