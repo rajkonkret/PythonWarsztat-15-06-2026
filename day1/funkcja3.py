@@ -337,7 +337,8 @@ print(pln_na_eur(1000))  # 240.0
 
 
 # lru_cache()
-def oblicz_koszt_wysyłki(kraj, waga):
+@lru_cache(maxsize=100)
+def oblicz_koszt_wysylki(kraj, waga):
     print(f"Obliczam koszt dla: {kraj}, {waga} kg")
 
     ceny_bazowe = {
@@ -345,3 +346,20 @@ def oblicz_koszt_wysyłki(kraj, waga):
         "Niemcy": 35,
         "Francja": 45
     }
+
+    cena_bazowa = ceny_bazowe.get(kraj, 70)
+
+    return cena_bazowa + waga * 2
+
+
+print(oblicz_koszt_wysylki("Polska", 5))
+# Obliczam koszt dla: Polska, 5 kg
+# 25
+print(oblicz_koszt_wysylki("Polska", 5))
+# 25 - wyciagnięty z cache
+
+print(oblicz_koszt_wysylki.cache_info())
+# CacheInfo(hits=1, misses=1, maxsize=100, currsize=1)
+
+oblicz_koszt_wysylki.cache_clear()
+print(oblicz_koszt_wysylki.cache_info())  # CacheInfo(hits=0, misses=0, maxsize=100, currsize=0)
