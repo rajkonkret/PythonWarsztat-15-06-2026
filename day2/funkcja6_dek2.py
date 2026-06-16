@@ -1,6 +1,8 @@
 # zrobic dekorator
 # zamiana na małe litery, oczyszczenie z białych znaków
 # wypisac wynik działania funkcji kolorem czerwonym i bold
+from functools import wraps
+
 
 def lowercase_decorator(func):
     def wew(*args, **kwargs):
@@ -77,6 +79,8 @@ komunikat()
 
 
 def color_decorator_wraps(func):
+
+    @wraps(func)
     def wrapper(*args, **kwargs):
         # *args - dowolna ilosc argumentów po pozycji 1,2,3,4
         # **kwargs - argumenty słownikowe a=10, b=12
@@ -85,6 +89,13 @@ def color_decorator_wraps(func):
 
     return wrapper
 
-
+@color_decorator_wraps
 def komunikat_wraps(string):
     return f"(color) Podałeś: {string}"
+
+print(komunikat_wraps("Radek 8"))
+print(komunikat_wraps.__name__) # -> wrapper
+
+# po dodaniu @wraps() zraca prawidłową nazwę funkcji: komunikat_wraps
+# '__module__', '__name__', '__qualname__', '__doc__',
+#                        '__annotate__', '__type_params__')
