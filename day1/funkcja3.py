@@ -50,3 +50,33 @@ print(ceny_brutto_map)  # [123.0, 307.5, 98.4, 1476.0, 55.35]
 # lamda jako funkcja anonimowa
 print(f"Lambda: {list(map(lambda cena: round(cena * 1.23, 2), ceny_netto))}")
 # Lambda: [123.0, 307.5, 98.4, 1476.0, 55.35]
+
+ceny = [100, 200, 300]
+rabaty = [0.10, 0.20, 0.05]
+
+cena_po_rabacie = list(
+    map(lambda cena, rabat: cena * (1 - rabat), ceny, rabaty)
+)
+print(cena_po_rabacie)  # [90.0, 160.0, 285.0]
+
+# filtrowanie
+temperatury = [-12, -2, 0, 4, 15, 22, 31, 38, 38]
+# wyfiltrowaac do listy upalne, większe niz 30
+
+upalne_dni = []
+
+for temperatura in temperatury:
+    if temperatura >= 30:
+        upalne_dni.append(temperatura)
+
+print(upalne_dni)  # [31, 38, 38]
+
+# filter() - zwraca elementy spełniające warunek
+upalne_dni = list(
+    filter(lambda temperatura: temperatura >= 30, temperatury)
+)
+
+print(upalne_dni)  # [31, 38, 38]
+
+# > 10 , < 25
+
