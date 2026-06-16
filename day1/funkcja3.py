@@ -127,5 +127,58 @@ pracownicy = [
     {"imie": "Anna", "pensja": 7500, "wiek": 32},
     {"imie": "Radek", "pensja": 17500, "wiek": 41},
     {"imie": "Tomek", "pensja": 6500, "wiek": 29},
-    {"imie": "MArek", "pensja": 12000, "wiek": 35},
+    {"imie": "Marek", "pensja": 12000, "wiek": 35},
 ]
+
+# pracownik z najwyższą pensją
+
+# max()
+najlepeij_oplacany = max(
+    pracownicy,
+    key=lambda osoba: osoba['pensja']
+)
+
+print(najlepeij_oplacany)  # {'imie': 'Radek', 'pensja': 17500, 'wiek': 41}
+
+# najmłodszy pracownik
+# min()
+najmlodszy = min(
+    pracownicy,
+    key=lambda osoba: osoba['wiek']
+)
+
+print(najmlodszy)  # {'imie': 'Tomek', 'pensja': 6500, 'wiek': 29}
+
+# sorted()
+posortowani = sorted(
+    pracownicy,
+    key=lambda osoba: osoba['pensja']
+)
+
+print(posortowani)
+
+posortowani = sorted(
+    pracownicy,
+    key=lambda osoba: osoba['pensja'],
+    reverse=True
+)
+
+print(posortowani)
+
+# minus(-) - oznacza sortuj malejąco
+posortowani = sorted(
+    pracownicy,
+    key=lambda osoba: (-osoba['pensja'], osoba['wiek'])
+
+)
+
+print(posortowani)
+
+# itemgetter
+from operator import itemgetter
+
+posortowani = sorted(
+    pracownicy,
+    key=itemgetter("pensja")  # odpowiednik: lambda osoba: osoba['pensja']
+)
+print(posortowani)
