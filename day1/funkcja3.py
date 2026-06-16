@@ -257,3 +257,31 @@ from operator import mul
 liczby = [2, 3, 4]
 wynik = reduce(mul, liczby)
 print(wynik)  # 24
+
+# any(), all()
+temperatury = [4, 8, -2, 10]
+# czy istnieje jakakolwiek ujemna
+czy_jest_ujemna = any(
+    temperatura < 0
+    for temperatura in temperatury
+)
+print(czy_jest_ujemna)  # True
+
+# czy wszystkie są dodatnie
+# all()
+czy_wszystkie_dodatnie = all(
+    temperatura > 0
+    for temperatura in temperatury
+)
+print(czy_wszystkie_dodatnie)  # False
+
+# zrobic liste zamowien(słownikow) id, oplacone -> True, False
+
+# wszystkie opłacone
+# czy jest jakies nieopłacone
+
+zamowienia = [
+    {'id': 1, 'oplacone': True},
+    {'id': 2, 'oplacone': True},
+    {'id': 3, 'oplacone': False},
+]
