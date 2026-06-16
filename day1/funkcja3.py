@@ -182,3 +182,31 @@ posortowani = sorted(
     key=itemgetter("pensja")  # odpowiednik: lambda osoba: osoba['pensja']
 )
 print(posortowani)
+
+# uzupełnienie danych
+
+# setdefault()
+
+klient1 = {
+    "imie": "Anna",
+    "miasto": "Kraków"
+}
+
+klient2 = {
+    "imie": "Radek",
+    "miasto": "Gdańsk",
+    "telefon": "500-600-700"
+}
+
+dodaj_telefon = lambda klient: klient.setdefault(
+    "telefon",
+    "brak numeru"
+)
+
+print(dodaj_telefon(klient1)) # brak numeru
+print(dodaj_telefon(klient2)) # 500-600-700
+
+print(klient1)
+print(klient2)
+# {'imie': 'Anna', 'miasto': 'Kraków', 'telefon': 'brak numeru'}
+# {'imie': 'Radek', 'miasto': 'Gdańsk', 'telefon': '500-600-700'}
