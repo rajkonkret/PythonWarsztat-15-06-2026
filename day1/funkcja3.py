@@ -44,7 +44,7 @@ print(ceny_brutto)
 ceny_brutto_map = list(map(dodaj_vat, ceny_netto))
 print(ceny_brutto_map)  # [123.0, 307.5, 98.4, 1476.0, 55.35]
 
-# map() - mapowanie danych
+# map() - mapowanie danych, jest lazy
 # funkcja wyzszego rzędu - jako argument przyjmuje inna funkcję
 
 # lamda jako funkcja anonimowa
