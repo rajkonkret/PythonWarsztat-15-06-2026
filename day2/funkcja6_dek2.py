@@ -79,7 +79,6 @@ komunikat()
 
 
 def color_decorator_wraps(func):
-
     @wraps(func)
     def wrapper(*args, **kwargs):
         # *args - dowolna ilosc argumentów po pozycji 1,2,3,4
@@ -89,12 +88,14 @@ def color_decorator_wraps(func):
 
     return wrapper
 
+
 @color_decorator_wraps
 def komunikat_wraps(string):
     return f"(color) Podałeś: {string}"
 
+
 print(komunikat_wraps("Radek 8"))
-print(komunikat_wraps.__name__) # -> wrapper
+print(komunikat_wraps.__name__)  # -> wrapper
 
 # po dodaniu @wraps() zraca prawidłową nazwę funkcji: komunikat_wraps
 # '__module__', '__name__', '__qualname__', '__doc__',
