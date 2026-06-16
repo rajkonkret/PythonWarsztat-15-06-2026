@@ -203,10 +203,25 @@ dodaj_telefon = lambda klient: klient.setdefault(
     "brak numeru"
 )
 
-print(dodaj_telefon(klient1)) # brak numeru
-print(dodaj_telefon(klient2)) # 500-600-700
+print(dodaj_telefon(klient1))  # brak numeru
+print(dodaj_telefon(klient2))  # 500-600-700
 
 print(klient1)
 print(klient2)
 # {'imie': 'Anna', 'miasto': 'Kraków', 'telefon': 'brak numeru'}
 # {'imie': 'Radek', 'miasto': 'Gdańsk', 'telefon': '500-600-700'}
+
+# miasta i kod pocztowy
+# zrobic funkcje z setdefault, zeby uzupełniło słoniki
+
+r0 = {'miasto': 'Kielce'}
+r1 = {"miasto": "Kielce", "ZIP": "25-900"}
+
+d_zip = lambda row: row.setdefault("ZIP", "00-000")
+print(d_zip(r0))
+print(d_zip(r1))
+
+print(r0)
+print(r1)
+# {'miasto': 'Kielce', 'ZIP': '00-000'}
+# {'miasto': 'Kielce', 'ZIP': '25-900'}
