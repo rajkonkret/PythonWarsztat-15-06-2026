@@ -80,3 +80,30 @@ print(upalne_dni)  # [31, 38, 38]
 
 # > 10 , < 25
 
+umiarkowane = list(
+    filter(lambda temperatura: 10 <= temperatura <= 25, temperatury)
+)
+
+print(umiarkowane)  # [15, 22]
+
+# zrobic liste złożoną ze str
+# przefiltrowac dłuzsze niz 6
+# za pomoca filter i list comprehensions
+
+miasta = [
+    'Warszawa',
+    "Kraków",
+    "Łódź",
+    "Katowice",
+    "Wrocław",
+    "Gdańsk"
+]
+
+dlugie_nazwy = list(
+    filter(lambda miasto: len(miasto) >= 6, miasta)
+)
+
+print(dlugie_nazwy)  # ['Warszawa', 'Kraków', 'Katowice', 'Wrocław', 'Gdańsk']
+
+dlugie_nazwy = [miasto for miasto in miasta if len(miasto) >= 6]
+print(dlugie_nazwy)
