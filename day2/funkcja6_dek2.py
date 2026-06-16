@@ -111,3 +111,13 @@ def dekor_z_arg(slowo):
         return wew
 
     return dekor
+
+
+@dekor_z_arg("HELo")
+def funkcja_argument():
+    print("Oryginalna funkcja")
+
+
+funkcja_argument()
+# Dekorator przekazał: HELo
+# Oryginalna funkcja
