@@ -44,3 +44,21 @@ print(next(c))
 # 3
 # 2
 # 1
+
+print(35 * "-")
+
+dane = [x for x in range(5)]
+print(dane)
+print(type(dane))
+
+dane = (x for x in range(5))  # wyrażenie generatorowe
+print(type(dane))  # <class 'generator'>
+
+print(dane)
+
+print(next(dane))
+print(next(dane))
+print(next(dane))
+print(next(dane))
+print(next(dane))
+# print(next(dane)) # StopIteration
