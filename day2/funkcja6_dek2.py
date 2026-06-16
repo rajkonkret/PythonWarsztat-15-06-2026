@@ -67,8 +67,24 @@ def czerwony_bold(func):
 
     return wrapper
 
+
 @czerwony_bold
 def komunikat():
     return "Uwaga! Wystąpił bład."
 
+
 komunikat()
+
+
+def color_decorator_wraps(func):
+    def wrapper(*args, **kwargs):
+        # *args - dowolna ilosc argumentów po pozycji 1,2,3,4
+        # **kwargs - argumenty słownikowe a=10, b=12
+        result = func(*args, **kwargs)
+        return "\033[31m" + result + "\033[0m"
+
+    return wrapper
+
+
+def komunikat_wraps(string):
+    return f"(color) Podałeś: {string}"
