@@ -41,6 +41,13 @@ def add_lc():
     return "OK LC"
 
 
+@measure_time
+def add_zip():
+    result = [a + b for a, b in zip(lista1, lista2)]
+    return "OK ZIP"
+
+
 my_time()  # Czas wykonania funkcji: my_time: 2.0009553999989294
 add_with_for()  # Czas wykonania funkcji: add_with_for: 2.68576409999514, Czas wykonania funkcji: add_with_for: 1.5666790999821387
 add_lc()  # Czas wykonania funkcji: add_lc: 1.2878811999689788
+add_zip()  # Czas wykonania funkcji: add_zip: 1.2108676999923773
