@@ -97,6 +97,17 @@ def komunikat_wraps(string):
 print(komunikat_wraps("Radek 8"))
 print(komunikat_wraps.__name__)  # -> wrapper
 
+
 # po dodaniu @wraps() zraca prawidłową nazwę funkcji: komunikat_wraps
 # '__module__', '__name__', '__qualname__', '__doc__',
 #                        '__annotate__', '__type_params__')
+
+def dekor_z_arg(slowo):
+    def dekor(func):
+        def wew():
+            print("Dekorator przekazał:", slowo)
+            return func()
+
+        return wew
+
+    return dekor
