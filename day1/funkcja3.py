@@ -238,3 +238,22 @@ wynik = reduce(
 )
 
 print(wynik)  # 60
+
+zamowienia = [120, 300, 80, 500]
+
+wynik = reduce(
+    lambda wynik, wartosc: wynik + wartosc,
+    zamowienia
+)
+print(wynik)  # 1000
+
+# reduce(lambda x, y: x + y, [])
+# TypeError: reduce() of empty iterable with no initial value
+# wartość domyślna
+print(reduce(lambda x, y: x + y, [], 0))  # 0
+
+from operator import mul
+
+liczby = [2, 3, 4]
+wynik = reduce(mul, liczby)
+print(wynik)  # 24
