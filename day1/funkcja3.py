@@ -106,7 +106,7 @@ dlugie_nazwy = list(
 print(dlugie_nazwy)  # ['Warszawa', 'Kraków', 'Katowice', 'Wrocław', 'Gdańsk']
 
 dlugie_nazwy = [miasto for miasto in miasta if len(miasto) >= 6]
-print(dlugie_nazwy) # ['Warszawa', 'Kraków', 'Katowice', 'Wrocław', 'Gdańsk']
+print(dlugie_nazwy)  # ['Warszawa', 'Kraków', 'Katowice', 'Wrocław', 'Gdańsk']
 
 # wybrac ceny wikesze niz 100, obnizyc o 10 %
 
@@ -115,10 +115,17 @@ ceny = [150, 250, 80, 75]
 wieksze_100 = list(
     filter(lambda cena: cena > 100, ceny)
 )
-print(wieksze_100) # [150, 250]
+print(wieksze_100)  # [150, 250]
 
 rabat_10 = list(
     map(lambda cena: cena * 0.9, wieksze_100)
 )
 
-print(rabat_10) # [135.0, 225.0]
+print(rabat_10)  # [135.0, 225.0]
+
+pracownicy = [
+    {"imie": "Anna", "pensja": 7500, "wiek": 32},
+    {"imie": "Radek", "pensja": 17500, "wiek": 41},
+    {"imie": "Tomek", "pensja": 6500, "wiek": 29},
+    {"imie": "MArek", "pensja": 12000, "wiek": 35},
+]
