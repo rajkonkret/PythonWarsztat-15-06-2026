@@ -15,3 +15,32 @@ def measure_time(func):
         return result
 
     return wrapper
+
+
+lista1 = list(range(10_000_000))
+lista2 = list(range(10_000_000))
+
+
+@measure_time
+def my_time():
+    time.sleep(2)
+
+
+@measure_time
+def add_with_for():
+    result = []
+    for i in range(len(lista1)):
+        suma = lista1[i] + lista2[i]
+        result.append(suma)
+    return "OK For"
+
+
+@measure_time
+def add_lc():
+    result = [lista1[i] + lista2[i] for i in lista1]
+    return "OK LC"
+
+
+my_time()  # Czas wykonania funkcji: my_time: 2.0009553999989294
+add_with_for()  # Czas wykonania funkcji: add_with_for: 2.68576409999514, Czas wykonania funkcji: add_with_for: 1.5666790999821387
+add_lc()  # Czas wykonania funkcji: add_lc: 1.2878811999689788
