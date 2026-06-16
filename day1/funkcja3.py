@@ -1,7 +1,7 @@
 # lambda - skrócony zapis funkcji
 # lambda zawsze zwraca wynik
 # funkcja anonimowa - nie ma nazwy, mozliwosc wykonania w miejscu deklaracji
-from functools import reduce
+from functools import reduce, lru_cache
 
 
 def oblicz_rabat(cena, procent):
@@ -334,3 +334,14 @@ def utworz_przelicznik(kurs):
 
 pln_na_eur = utworz_przelicznik(0.24)
 print(pln_na_eur(1000))  # 240.0
+
+
+# lru_cache()
+def oblicz_koszt_wysyłki(kraj, waga):
+    print(f"Obliczam koszt dla: {kraj}, {waga} kg")
+
+    ceny_bazowe = {
+        "Polska": 15,
+        "Niemcy": 35,
+        "Francja": 45
+    }
