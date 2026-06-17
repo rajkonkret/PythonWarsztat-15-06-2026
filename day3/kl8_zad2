@@ -1,8 +1,0 @@
-# Stworzyc system zarządzania biblioteką
-# Book -> title, author, isbn
-# dodanie ksiązki, wypozyczenie ksiązki, zwrot ksiązki
-# lista dostępnych
-# lista wypozyczonych
-# dodac klasę Library
-#  * dodac User
-# -----
