@@ -10,7 +10,26 @@
 def validate_isbn(param_name: str = "isbn"):
     def deco(fn):
         def wrapper(*args, **kwargs):
-            pass
+
+            if param_name in kwargs:
+                raw = str(kwargs[param_name])
+                clean = raw.replace("-", "").strip()
+                if len(clean) != 10 or not clean.isdigit():
+                    raise ValueError("ISBN musi mieć dokładnie 10 cyfr")
+                kwargs[param_name] = clean
+                return fn(*args, **kwargs)
+
+            if len(args) < 2:
+                raise ValueError("Brak argumentu ISBN")
+
+            raw = str(args[1])
+            clean = raw.replace("-", "").strip()
+            if len(clean) != 10 or not clean.isdigit():
+                raise ValueError("ISBN musi mieć dokładnie 10 cyfr")
+            new_args = list(args)
+            new_args[1] = clean
+
+            return fn(*tuple(new_args), **kwargs)
 
         return wrapper
 
@@ -63,3 +82,5 @@ biblioteka = Library()
 book1 = Book("Pan Tadeusz", 'Adam Mickiewicz', "1234567890")
 biblioteka.fun_dodaj_ksiazki(book1)
 print(biblioteka.fun_dostepne_ksiazki())
+print(biblioteka.fun_wypozycz_ksiazke("1234567890"))
+# Author: Adam Mickiewicz, Tytuł: Pan Tadeusz, ISBN: 1234567890
