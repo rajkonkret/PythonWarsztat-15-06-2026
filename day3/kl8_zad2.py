@@ -83,9 +83,11 @@ class Library:
     def fun_wypozyczone_ksiazki(self):
         return self.wypozyczone_ksiazki
 
+    @audit("dodano")
     def fun_dodaj_ksiazki(self, book: "Book"):
         self.dostepne_ksiazki.append(book)
 
+    @audit("zwrócono")
     def fun_zwroc_ksiazke(self, isbn):
         for book in self.wypozyczone_ksiazki:
             if book.isbn == isbn:
@@ -95,6 +97,7 @@ class Library:
         raise Exception("Ksiązka nie jest z naszej biblioteki")
 
     @validate_isbn("isbn")
+    @audit("wypożyczono")
     def fun_wypozycz_ksiazke(self, isbn):
         for book in self.dostepne_ksiazki:
             if book.isbn == isbn:
@@ -110,3 +113,20 @@ biblioteka.fun_dodaj_ksiazki(book1)
 print(biblioteka.fun_dostepne_ksiazki())
 print(biblioteka.fun_wypozycz_ksiazke("1234567890"))
 # Author: Adam Mickiewicz, Tytuł: Pan Tadeusz, ISBN: 1234567890
+print(biblioteka._audit_log)
+
+while True:
+    print("""Menu""")
+
+    try:
+        odp = input("Wybierz opcję:")
+
+        if odp == "1":
+            pass
+        elif odp == "6":
+            break
+        else:
+            print("Błędny wybór")
+
+    except Exception as e:
+        print("Bład:", e)
