@@ -52,6 +52,9 @@ class MyFirstClass:
     def __str__(self):
         return f"{self.x, self.y}"
 
+    def __repr__(self):
+        return f"{self.__class__.__name__}{self.x, self.y}"
+
 
 ob = MyFirstClass()
 print(ob)  # <__main__.MyFirstClass object at 0x000001DC7FA7CC20>
@@ -79,3 +82,25 @@ print(point2)  # (56, 90)
 
 print(point1.calculate(point2))
 # 106.0
+
+point3 = MyFirstClass(43, 21)
+point4 = MyFirstClass(34, 78)
+
+print(point3)  # (43, 21)
+print(point4)  # (34, 78)
+
+lista = [point1, point2, point3, point4]
+
+print(lista)
+# [<__main__.MyFirstClass object at 0x0000024B1A1BA5D0>,
+# <__main__.MyFirstClass object at 0x0000024B1A3B1BD0>,
+# <__main__.MyFirstClass object at 0x0000024B11AADCD0>,
+# <__main__.MyFirstClass object at 0x0000024B1A20DA70>]
+
+# __str__ -> bezposredni print(), str()
+
+# __repr__ - reprezentacja obiektu dla programisty
+# [MyFirstClass(0, 0),
+# MyFirstClass(56, 90),
+# MyFirstClass(43, 21),
+# MyFirstClass(34, 78)]
