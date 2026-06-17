@@ -3,6 +3,7 @@ class Contact:
     Klasa contact - stworzony obiekt ma automatycznie trafiac do wspolnej listy w tej klasie
     """
     all_contacts = []  # wspolna lista dla wszystkich obiektów tej klasy
+    x = 'TEST'
 
     def __init__(self, name, email):
         """
@@ -28,3 +29,11 @@ print(c1.all_contacts)
 
 # bez obiektu
 print(Contact.all_contacts)  # [Radek radek@wp.pl, Tomek tomek@wp.pl, Anna anna@wp.pl]
+
+print(c1.x)  # TEST
+print(Contact.x)  # TEST
+c2.x = 'TEST2'
+
+print(Contact.x)  # TEST
+print(c2.x)  # TEST2
+print(c1.x)  # TEST
