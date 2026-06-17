@@ -25,3 +25,13 @@ def filter_transactions(transactions, transaction_type):
     return list(filter(lambda x: x['type'] == transaction_type, transactions))
 
 
+def map_transactions(transactions, currency):
+    """
+    Mapuje transakcje spełniające warunek waluty
+    :param transactions:
+    :param currency:
+    :return:
+    """
+    return list(map(lambda x: x['amount'] if x['currency'] == currency else 0, transactions))
+
+
