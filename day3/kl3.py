@@ -102,3 +102,28 @@ class Friend(Suplier):
 
     def __repr__(self):
         return f"{self.name} {self.email} +48{self.phone}"
+
+
+f1 = Friend("MArk", "mark@gov.pl")
+f2 = Friend("Kamil", "kamil_the_best@gov.pl", "500600700")
+
+print(f1, f2)  # MArk mark@gov.pl +48000000000 Kamil kamil_the_best@gov.pl +48500600700
+
+print(Contact.all_contacts)
+# [Radek radek@wp.pl, Tomek tomek@wp.pl, Anna anna@wp.pl,
+# Marek marek@wp.pl, MArk mark@gov.pl +48000000000, Kamil kamil_the_best@gov.pl +48500600700]
+
+from pprint import pprint
+
+pprint(Contact.all_contacts)
+# [Radek radek@wp.pl,
+#  Tomek tomek@wp.pl,
+#  Anna anna@wp.pl,
+#  Marek marek@wp.pl,
+#  MArk mark@gov.pl +48000000000,
+#  Kamil kamil_the_best@gov.pl +48500600700]
+
+
+# kolejność rozwiązywania nazw metod (pól) dla obiektu
+print(Friend.__mro__)
+# (<class '__main__.Friend'>, <class '__main__.Suplier'>, <class '__main__.Contact'>, <class 'object'>)
