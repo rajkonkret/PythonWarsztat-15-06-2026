@@ -8,8 +8,20 @@ transactions = [
     {'id': 7, "type": "income", "amount": 100, "currency": "EUR"},
 ]
 
+
 # filtrowac transakcje - -> list
 # mapowac transakcje -> currency, ma wstawic 0
 # potem zsumowac te transakcje - reduce
 
 # raport - łacząca te operacje
+
+def filter_transactions(transactions, transaction_type):
+    """
+    Filtruje transakcje p otypie transakcji: income, expense
+    :param transactions:
+    :param transaction_type:
+    :return:
+    """
+    return list(filter(lambda x: x['type'] == transaction_type, transactions))
+
+
