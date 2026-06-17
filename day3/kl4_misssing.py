@@ -22,7 +22,24 @@ class AutoDict(dict):
         self[key] = 0
         return key
 
+
 a1 = AutoDict()
 print(a1)
-print(a1['name']) # name
-print(a1) # {'name': 0}
+print(a1['name'])  # name
+print(a1)  # {'name': 0}
+
+
+# zmienia klucze na małe litery
+class CaseInsensitiveDict(dict):
+    def __missing__(self, key):
+        # return self.get(key.lower())
+        if isinstance(key, str):
+            return self.get(key.lower())
+        return key
+
+
+c1 = CaseInsensitiveDict()
+c1['name'] = "Radek"
+print(c1['Name'])  # Radek
+
+print(c1['age'])  # None
