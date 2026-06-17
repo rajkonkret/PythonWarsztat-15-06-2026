@@ -54,5 +54,23 @@ def process_transactions(transactions, transaction_type, currency):
     return total
 
 
-print(process_transactions(transactions, "expense", "EUR"))
+def test_transactions_processing():
+    assert (map_transactions(filter_transactions(transactions, "income"), "USD")
+            == [1000, 500, 700, 0])
+
+
+if __name__ == '__main__':
+    print(process_transactions(transactions, "expense", "EUR"))
 # 400
+
+# (.venv) PS C:\Users\CSComarch\PycharmProjects\PythonWarsztat-15-06-2026\day3> pytest -v .\transakcje.py
+# ============================================================================== test session starts ===============================================================================
+# platform win32 -- Python 3.14.6, pytest-9.1.0, pluggy-1.6.0 -- C:\Users\CSComarch\PycharmProjects\PythonWarsztat-15-06-2026\.venv\Scripts\python.exe
+# cachedir: .pytest_cache
+# rootdir: C:\Users\CSComarch\PycharmProjects\PythonWarsztat-15-06-2026\day3
+# collected 1 item
+#
+# transakcje.py::test_transactions_processing PASSED                                                                                                                          [100%]
+#
+# =============================================================================== 1 passed in 0.01s ================================================================================
+# (.venv) PS C:\Users\CSComarch\PycharmProjects\PythonWarsztat-15-06-2026\day3>
