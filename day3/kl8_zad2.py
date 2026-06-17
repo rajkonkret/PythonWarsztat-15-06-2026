@@ -6,9 +6,34 @@
 # dodac klasę Library
 #  * dodac User
 # -----
+from datetime import datetime
+from functools import wraps
+
+
+def audit(action: str):
+    """
+    Dekorator dopisujący wpis do dziennika logó
+    :param action:
+    :return:
+    """
+
+    def deco(fn):
+        def wrapper(self: "Library", *args, **kwargs):
+            result = fn(self, *args, **kwargs)
+            self._audit_log.append(
+                f"{datetime.now():%Y-%m-%d %H:%M:%S} | {action} | {args=} {kwargs}"
+            )
+            return result
+
+        return wrapper
+
+    return deco
+
 
 def validate_isbn(param_name: str = "isbn"):
     def deco(fn):
+
+        @wraps(fn)
         def wrapper(*args, **kwargs):
 
             if param_name in kwargs:
@@ -48,6 +73,7 @@ class Book:
 
 class Library:
     def __init__(self):
+        self._audit_log = []
         self.dostepne_ksiazki = []
         self.wypozyczone_ksiazki = []
 
