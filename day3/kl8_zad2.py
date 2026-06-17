@@ -7,6 +7,16 @@
 #  * dodac User
 # -----
 
+def validate_isbn(param_name: str = "isbn"):
+    def deco(fn):
+        def wrapper(*args, **kwargs):
+            pass
+
+        return wrapper
+
+    return deco
+
+
 class Book:
     def __init__(self, title, author, isbn):
         self.title = title
@@ -39,6 +49,7 @@ class Library:
                 return book
         raise Exception("Ksiązka nie jest z naszej biblioteki")
 
+    @validate_isbn("isbn")
     def fun_wypozycz_ksiazke(self, isbn):
         for book in self.dostepne_ksiazki:
             if book.isbn == isbn:
@@ -46,3 +57,9 @@ class Library:
                 self.dostepne_ksiazki.remove(book)
                 return book
         raise Exception("Nie ma takiej ksiązki")
+
+
+biblioteka = Library()
+book1 = Book("Pan Tadeusz", 'Adam Mickiewicz', "1234567890")
+biblioteka.fun_dodaj_ksiazki(book1)
+print(biblioteka.fun_dostepne_ksiazki())
