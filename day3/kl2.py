@@ -37,3 +37,20 @@ c2.x = 'TEST2'
 print(Contact.x)  # TEST
 print(c2.x)  # TEST2
 print(c1.x)  # TEST
+
+
+class Suplier(Contact):
+    """
+    Klasa dziedziczy po klasie Contact
+    """
+
+    def order(self, order):
+        print(f"{order} zamówiono od {self.name}")
+
+
+sup1 = Suplier("Marek", "marek@wp.pl")
+print(sup1)  # Marek marek@wp.pl
+print(sup1.all_contacts)
+# [Radek radek@wp.pl, Tomek tomek@wp.pl, Anna anna@wp.pl, Marek marek@wp.pl]
+
+sup1.order("kawa")  # kawa zamówiono od Marek
