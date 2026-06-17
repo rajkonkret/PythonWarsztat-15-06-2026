@@ -16,7 +16,7 @@ while True:
         odp = input("Wybierz opcję")  # str
 
         if odp == "1":
-            name = input("Podaj imię kontaktu")
+            name = input("Podaj imię kontaktu:")
             number = input("Podaj numer telefonu kontaktu(tylko cyfry):")
             if not number.isdigit():
                 raise ValueError("Numer telefonu powinien zawierać cyfry")
@@ -24,11 +24,17 @@ while True:
                 contacts[name.lower()] = number
                 print("Kontakt został dodany")
         elif odp == "2":
-            name = input('podaj imię kontaktu do usunięcia')
+            name = input('podaj imię kontaktu do usunięcia:')
             if name.casefold() in contacts:
                 # del contacts[name.casefold()]
                 contacts.pop(name.casefold())
                 print(f'Kontakt został usunięty')
+        elif odp == "3":
+            name = input("Podaj imię kontaktu do wyszukania:")
+            if name.lower() in contacts:
+                print(f"Kontakt {name.capitalize()}, nr telefonu; {contacts[name.lower()]}")
+        elif odp == "4":
+            print(f"Lista kontaktów: {contacts}")
         elif odp == "5":
             break
         else:
