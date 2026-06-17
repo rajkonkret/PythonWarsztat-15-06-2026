@@ -27,7 +27,7 @@ def test_reduce_transactions():
 # day3/tests/test_transakcje.py::test_reduce_transactions PASSED           [100%]
 
 def test_filter_transactions_income():
-    transactions = [
+    expected_list = [
         {'id': 1, "type": "income", "amount": 1000, "currency": "USD"},
 
         {'id': 3, "type": "income", "amount": 500, "currency": "USD"},
@@ -36,3 +36,9 @@ def test_filter_transactions_income():
 
         {'id': 7, "type": "income", "amount": 100, "currency": "EUR"},
     ]
+
+    assert tr.filter_transactions(tr.transactions, "income") == expected_list
+
+# day3/tests/test_transakcje.py::test_maap_transactions_usd PASSED         [ 33%]
+# day3/tests/test_transakcje.py::test_reduce_transactions PASSED           [ 66%]
+# day3/tests/test_transakcje.py::test_filter_transactions_income PASSED    [100%]
