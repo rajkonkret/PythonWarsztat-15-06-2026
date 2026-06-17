@@ -22,3 +22,9 @@ class Contact:
 c1 = Contact("Radek", "radek@wp.pl")
 c2 = Contact("Tomek", "tomek@wp.pl")
 c3 = Contact("Anna", "anna@wp.pl")
+
+print(c1.all_contacts)
+# [Radek radek@wp.pl, Tomek tomek@wp.pl, Anna anna@wp.pl]
+
+# bez obiektu
+print(Contact.all_contacts)  # [Radek radek@wp.pl, Tomek tomek@wp.pl, Anna anna@wp.pl]
