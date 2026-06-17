@@ -44,3 +44,11 @@ def reduce_transactions(mapped):
     :return: suma transakcji int, float
     """
     return reduce(lambda x, y: x + y, mapped, 0)
+
+
+def process_transactions(transactions, transaction_type, currency):
+    filtered = filter_transactions(transactions, transaction_type)
+    mapped = map_transactions(filtered, currency)
+    total = reduce_transactions(mapped)
+
+    return total
