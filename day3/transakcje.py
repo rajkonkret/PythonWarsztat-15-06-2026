@@ -52,3 +52,7 @@ def process_transactions(transactions, transaction_type, currency):
     total = reduce_transactions(mapped)
 
     return total
+
+
+print(process_transactions(transactions, "expense", "EUR"))
+# 400
