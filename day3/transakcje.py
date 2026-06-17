@@ -7,3 +7,9 @@ transactions = [
     {'id': 6, "type": "expense", "amount": 400, "currency": "EUR"},
     {'id': 7, "type": "income", "amount": 100, "currency": "EUR"},
 ]
+
+# filtrowac transakcje - -> list
+# mapowac transakcje -> currency, ma wstawic 0
+# potem zsumowac te transakcje - reduce
+
+# raport - łacząca te operacje
