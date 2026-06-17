@@ -1,3 +1,5 @@
+from functools import reduce
+
 transactions = [
     {'id': 1, "type": "income", "amount": 1000, "currency": "USD"},
     {'id': 2, "type": "expense", "amount": 200, "currency": "USD"},
@@ -20,7 +22,7 @@ def filter_transactions(transactions, transaction_type):
     Filtruje transakcje p otypie transakcji: income, expense
     :param transactions:
     :param transaction_type:
-    :return:
+    :return: lista transakcji
     """
     return list(filter(lambda x: x['type'] == transaction_type, transactions))
 
@@ -30,8 +32,15 @@ def map_transactions(transactions, currency):
     Mapuje transakcje spełniające warunek waluty
     :param transactions:
     :param currency:
-    :return:
+    :return: lista transakcji
     """
     return list(map(lambda x: x['amount'] if x['currency'] == currency else 0, transactions))
 
 
+def reduce_transactions(mapped):
+    """
+    Zsumuje kwoty transakcji
+    :param mapped:
+    :return: suma transakcji int, float
+    """
+    return reduce(lambda x, y: x + y, mapped, 0)
