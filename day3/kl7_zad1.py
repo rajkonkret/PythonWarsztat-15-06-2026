@@ -23,6 +23,12 @@ while True:
             else:
                 contacts[name.lower()] = number
                 print("Kontakt został dodany")
+        elif odp == "2":
+            name = input('podaj imię kontaktu do usunięcia')
+            if name.casefold() in contacts:
+                # del contacts[name.casefold()]
+                contacts.pop(name.casefold())
+                print(f'Kontakt został usunięty')
         elif odp == "5":
             break
         else:
