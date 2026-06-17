@@ -5,6 +5,8 @@
 # obiekt kalsy (instancja)
 # metoda inicjalizującą __init__ - konstruktor
 # hermetyzacja, dziedziczenie, polimorfizm, abstrakcja
+import math
+
 
 # PascalCase, UpperCamelCase
 class MyFirstClass:
@@ -24,7 +26,7 @@ class MyFirstClass:
         self.move(x, y)
 
     # move(x, y)
-    def move(self, x, y):
+    def move(self, x: int, y: int) -> None:
         """
         Zmienia x i y obiektu na nowe waartości
         :param x:
@@ -33,6 +35,18 @@ class MyFirstClass:
         """
         self.x = x
         self.y = y
+
+    def reset(self):
+        self.move(0, 0)
+
+    def calculate(self, other: "MyFirstClass") -> float:
+        """
+        For a two dimensional point (x, y), this
+        is equivalent to computing the hypotenuse of a right triangle using the Pythagorean theorem, sqrt(x*x + y*y).
+        :param other:
+        :return:
+        """
+        return math.hypot(self.x - other.x, self.y - other.y)
 
     # metoda opisowa obiektu
     def __str__(self):
@@ -51,3 +65,17 @@ print(ob)  # (0, 0) po nadpisaniu __str__
 
 point1 = MyFirstClass(5, 9)
 print(point1)  # (5, 9)
+
+point1.move(56, 90)
+print(point1)  # (56, 90)
+
+# reset()
+point1.reset()
+print(point1)  # (0, 0)
+
+point2 = MyFirstClass(56, 90)
+# odległość pomiędzy tymi punktami
+print(point2)  # (56, 90)
+
+print(point1.calculate(point2))
+# 106.0
