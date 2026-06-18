@@ -21,7 +21,7 @@ async def measure_aiohttp():
     overall_st = time.perf_counter()
 
     async with aiohttp.ClientSession() as session:
-        for i in range(100):
+        for i in range(200):
             tasks.append(fetch(url, session, i + 1))
 
         statuses = await asyncio.gather(*tasks)
