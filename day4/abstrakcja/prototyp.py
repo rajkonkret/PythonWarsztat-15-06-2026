@@ -17,7 +17,7 @@ class Prototyp(ABC):
         pass
 
     @abstractmethod
-    def info(self):
+    def info(self, msg):
         pass
 
     def msg(self):
