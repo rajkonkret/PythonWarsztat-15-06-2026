@@ -19,4 +19,4 @@ class Matematyka:
 
 print(Matematyka.dodaj(5, 90))  # 95
 
-print(Matematyka.odejmij(90, 78)) # 12
+print(Matematyka.odejmij(90, 78))  # 12
