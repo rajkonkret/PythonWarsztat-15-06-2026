@@ -35,3 +35,22 @@ print(num3 == num4)  # False
 num5 = MyNumber2(15)
 print(num4 == num5)  # True
 print(num5 > num3)  # True
+
+
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __add__(self, other):
+        if isinstance(other, Point):
+            return Point(self.x + other.x, self.y + other.y)
+        return NotImplemented
+
+    def __repr__(self):
+        return f"Point({self.x}, {self.y})"
+
+
+point1 = Point(1, 4)
+point2 = Point(9, 4)
+print(point1 + point2)  # Point(10, 8)
