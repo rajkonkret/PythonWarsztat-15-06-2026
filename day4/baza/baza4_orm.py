@@ -35,6 +35,8 @@ session.commit()
 
 persons = session.query(Person).all()
 print(persons)  # [Radek, Radek, Radek]
+# SELECT person.id AS person_id, person.name AS person_name, person.age AS person_age
+# FROM person
 
 # pgAdmin, dbeaver
 # tablePlus
