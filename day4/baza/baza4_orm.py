@@ -32,3 +32,9 @@ person = Person(name="Radek", age="23")
 session.add(person)
 session.commit()
 # INSERT INTO person (name, age) VALUES (?, ?) ('Radek', '23')
+
+persons = session.query(Person).all()
+print(persons)  # [Radek, Radek, Radek]
+
+# pgAdmin, dbeaver
+# tablePlus
